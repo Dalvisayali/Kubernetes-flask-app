@@ -6,10 +6,10 @@ services:
     ports:
       - "5001:5000"
     depends_on:
-      - db
+      - postgresql
     environment:
       - SQLALCHEMY_DATABASE_URI=postgresql://postgres:postgres@db:5432/mydatabase
-  db:
+  postgresql:
     image: postgres:13
     environment:
       POSTGRES_USER: postgres
